@@ -5,7 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Hero from "@/components/hero.astro";
-import Breadcrumb from "@/components/Breadcrumb.astro";
+// import Breadcrumb from "@/components/Breadcrumb.astro"; // MODIFIED: Commented out Breadcrumb import
 import Features from "@/components/features.astro";
 import Testimonials from "@/components/Testimonials.astro";
 // import WhyChooseUs from "@/components/WhyChooseUs.astro"; // Commented out import
@@ -51,13 +51,14 @@ const whyChooseUsCardData = [
   {/* <WhyChooseUs /> */}
   <Hero title="About" />
   <Container>
-    <!-- Breadcrumb Section -->
+    {/* Breadcrumb Section - MODIFIED: Commented out Breadcrumb usage
     <Breadcrumb
       items={[
         { label: "Home", href: "/" },
         { label: "About" }
       ]}
     />
+    */}
 
     <h1 class="text-center text-3xl font-bold mb-6">About Us</h1>
     <p class="text-center mb-8">Learn more about our company and values.</p>
