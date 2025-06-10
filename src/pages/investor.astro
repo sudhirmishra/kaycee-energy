@@ -1,0 +1,145 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+
+// Import all the new investor content components
+import Notices from "@/components/investor/Notices.astro";
+import ShareholderMeeting from "@/components/investor/ShareholderMeeting.astro";
+import QualifiedInstitutionsPlacement from "@/components/investor/QualifiedInstitutionsPlacement.astro";
+import IntimationOfBoardMeeting from "@/components/investor/IntimationOfBoardMeeting.astro";
+import InvestorOutcome from "@/components/investor/InvestorOutcome.astro";
+import InvestorMeet from "@/components/investor/InvestorMeet.astro";
+import PressRelease from "@/components/investor/PressRelease.astro";
+import InvestorPresentation from "@/components/investor/InvestorPresentation.astro";
+import BoardMeeting from "@/components/investor/BoardMeeting.astro";
+import ConcallMeeting from "@/components/investor/ConcallMeeting.astro";
+import AnnualReturns from "@/components/investor/AnnualReturns.astro";
+import AnnualReports from "@/components/investor/AnnualReports.astro";
+import CodePolicies from "@/components/investor/CodePolicies.astro";
+import CodeOfConduct from "@/components/investor/CodeOfConduct.astro";
+import ShareHoldingPattern from "@/components/investor/ShareHoldingPattern.astro";
+import StructuredDigitalDatabase from "@/components/investor/StructuredDigitalDatabase.astro";
+import CommitteesOfBoardOfDirector from "@/components/investor/CommitteesOfBoardOfDirector.astro";
+import HalfYearlyResults from "@/components/investor/HalfYearlyResults.astro";
+import IntimationAndDisclosuresSebiLodr from "@/components/investor/IntimationAndDisclosuresSebiLodr.astro";
+import InfoSebiLodrReg2015 from "@/components/investor/InfoSebiLodrReg2015.astro";
+import FinancialStatementSubsidiary from "@/components/investor/FinancialStatementSubsidiary.astro";
+import FinancialResults from "@/components/investor/FinancialResults.astro";
+import RelatedPartyTransaction from "@/components/investor/RelatedPartyTransaction.astro";
+import CorporateGovernanceReport from "@/components/investor/CorporateGovernanceReport.astro";
+
+const allNavItems = [
+  { id: "notices", title: "Notices", component: Notices },
+  { id: "shareholder-meeting", title: "Shareholder Meeting", component: ShareholderMeeting },
+  { id: "qip", title: "Qualified Institutions Placement", component: QualifiedInstitutionsPlacement },
+  { id: "intimation-board-meeting", title: "Intimation Of Board Meeting", component: IntimationOfBoardMeeting },
+  { id: "investor-outcome", title: "Investor Outcome", component: InvestorOutcome },
+  { id: "investor-meet", title: "Investor Meet", component: InvestorMeet },
+  { id: "press-release", title: "Press Release", component: PressRelease },
+  { id: "investor-presentation", title: "Investor Presentation", component: InvestorPresentation },
+  { id: "board-meeting", title: "Board Meeting", component: BoardMeeting },
+  { id: "concall-meeting", title: "Concall Meeting", component: ConcallMeeting },
+  { id: "annual-returns", title: "Annual Returns", component: AnnualReturns },
+  { id: "annual-reports", title: "Annual Reports", component: AnnualReports },
+  { id: "code-policies", title: "Code & Policies", component: CodePolicies },
+  { id: "code-of-conduct", title: "Code of Conduct", component: CodeOfConduct },
+  { id: "share-holding-pattern", title: "Share Holding Pattern", component: ShareHoldingPattern },
+  { id: "sdd", title: "Structured Digital Database", component: StructuredDigitalDatabase },
+  { id: "committees", title: "Committees of Board of Director", component: CommitteesOfBoardOfDirector },
+  { id: "half-yearly-results", title: "Half Yearly Results 2023-24", component: HalfYearlyResults },
+  { id: "intimation-disclosures-sebi-lodr", title: "Intimation And Disclosures Under Reg 29 And 30 Of SEBI Lodr", component: IntimationAndDisclosuresSebiLodr },
+  { id: "info-sebi-lodr-reg-2015", title: "Information pursuant to SEBI (LODR) Regulation, 2015", component: InfoSebiLodrReg2015 },
+  { id: "financial-statement-subsidiary", title: "Financial Statement of Subsidiary companies", component: FinancialStatementSubsidiary },
+  { id: "financial-results", title: "Financial Results", component: FinancialResults },
+  { id: "related-party-transaction", title: "Disclosure of Related Party Transaction", component: RelatedPartyTransaction },
+  { id: "corporate-governance-report", title: "Corporate Governance Report", component: CorporateGovernanceReport },
+];
+
+---
+
+<Layout title="Investor Relations">
+  <Hero title="Investor Relations" />
+  <Container>
+    <div class="flex flex-col md:flex-row gap-8 my-12">
+      {/* Left Column: Navigation */}
+      <aside class="md:w-1/4 space-y-2">
+        <nav class="sticky top-24">
+          <ul class="space-y-1">
+            {allNavItems.map((item, index) => (
+              <li>
+                <a
+                  href={`#${item.id}`}
+                  id={`nav-${item.id}`}
+                  class:list={[
+                    "block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors",
+                    index === 0 ? "bg-blue-100 text-blue-700 font-semibold" : "",
+                  ]}
+                  data-target={item.id}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Right Column: Content Area */}
+      <main class="md:w-3/4 space-y-6">
+        {allNavItems.map((item, index) => {
+          const Component = item.component;
+          return (
+            <section id={item.id} class:list={["p-6 bg-white rounded-lg shadow-md", index !== 0 ? "hidden" : ""]}>
+              <h2 class="text-2xl font-bold text-gray-800 mb-4">{item.title}</h2>
+              <Component /> {/* Render the component */}
+            </section>
+          );
+        })}
+      </main>
+    </div>
+  </Container>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('aside nav a');
+    const contentSections = document.querySelectorAll('main section');
+    
+    // Set initial active state based on the first item
+    const firstItemId = navLinks[0]?.dataset.target;
+    if (firstItemId) {
+      document.getElementById(`nav-${firstItemId}`)?.classList.add('bg-blue-100', 'text-blue-700', 'font-semibold');
+      const firstSection = document.getElementById(firstItemId);
+      if (firstSection) firstSection.classList.remove('hidden');
+    }
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.dataset.target;
+
+        // Update active link styling
+        navLinks.forEach(navLink => {
+          navLink.classList.remove('bg-blue-100', 'text-blue-700', 'font-semibold');
+        });
+        link.classList.add('bg-blue-100', 'text-blue-700', 'font-semibold');
+
+        // Show target section, hide others
+        contentSections.forEach(section => {
+          if (section.id === targetId) {
+            section.classList.remove('hidden');
+          } else {
+            section.classList.add('hidden');
+          }
+        });
+
+        // Scroll to the top of the content section on smaller screens if nav is not sticky
+        if (window.innerWidth < 768) { // md breakpoint
+          const targetSection = document.getElementById(targetId);
+          targetSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+</script>

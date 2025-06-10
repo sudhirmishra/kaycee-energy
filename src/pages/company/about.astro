@@ -1,0 +1,153 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro"; // Import Hero component
+import CardLayout from "@/components/CardLayout.astro"; // Import CardLayout component
+import Tick from "@/components/ui/icons/tick.astro"; // Import Tick icon
+import WhyChooseUs from "@/components/WhyChooseUs.astro"; // Import WhyChooseUs component
+---
+
+<Layout title="About">
+  <Hero title="About Us" />
+  <Container>
+     {/* Breadcrumb Section */}
+    <div class="mt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="flex space-x-2 text-gray-600">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li>/</li>
+          <li><a href="/company" class="hover:underline">Company</a></li>
+          <li>/</li>
+          <li>About Us</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- New Two-Column Section -->
+    <div class="my-12 grid md:grid-cols-2 gap-10 items-center">
+      <!-- Left Column: Image Collage -->
+      <div class="relative h-64 sm:h-80 md:h-96 group">
+        <img 
+          src="/src/assets/about/hero-2-2.jpg" 
+          alt="Kay Cee Energy Collage Image 1" 
+          class="absolute top-0 left-0 w-7/12 h-7/12 object-cover rounded-xl shadow-lg transform transition-transform duration-300 group-hover:scale-105 z-10" 
+        />
+        <img 
+          src="/src/assets/about/hero-2-3.jpg" 
+          alt="Kay Cee Energy Collage Image 2" 
+          class="absolute bottom-0 right-0 w-7/12 h-7/12 object-cover rounded-xl shadow-lg transform transition-transform duration-300 group-hover:scale-105 z-10" 
+        />
+        <img 
+          src="/src/assets/about/hero-2-1.jpg" 
+          alt="Kay Cee Energy Collage Image 3 (Centered)" 
+          class="absolute top-1/2 left-1/2 w-8/12 h-8/12 object-cover rounded-xl shadow-xl transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:scale-110 z-20" 
+        />
+      </div>
+
+      <!-- Right Column: Content -->
+      <div class="space-y-6">
+        <!-- 1st Row: Subtitle -->
+        <p class="text-blue-600 font-semibold text-lg">Sustainable, Reliable & Affordable Energy!</p>
+
+        <!-- 2nd Row: Title -->
+        <h1 class="text-4xl font-bold text-gray-800">Kay Cee Energy & Infra, Powering. Your Future Since Inception.</h1>
+
+        <!-- 3rd Row: Sliders & Experience -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-8 space-y-4 sm:space-y-0">
+          <div class="flex-1 space-y-2">
+            <div class="flex justify-between mb-1">
+              <span class="text-base font-medium text-blue-700">Renewable Energy</span>
+              <span class="text-sm font-medium text-blue-700">99%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 99%"></div>
+            </div>
+          </div>
+          <div class="flex-1 space-y-2">
+            <div class="flex justify-between mb-1">
+              <span class="text-base font-medium text-green-700">Complete Project</span>
+              <span class="text-sm font-medium text-green-700">85%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-green-500 h-2.5 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="text-center sm:text-left">
+            <p class="text-3xl font-bold text-gray-700">25+</p>
+            <p class="text-sm text-gray-500">Years Experience</p>
+          </div>
+        </div>
+
+        <!-- 4th Row: Paragraph -->
+        <p class="text-slate-500 leading-relaxed">
+          KAY CEE ENERGY & INFRA PRIVATE LIMITED stands as a distinguished name in the realm of Engineering, Procurement, and Construction (EPC) services, with a specialized focus on Extra High Voltage (EHV) power transmission lines. Our unwavering dedication to delivering cutting-edge solutions has propelled us to the forefront of the industry.Since its inception in 1996 as a proprietorship firm by the visionary Lokendra Jain, the company has embarked on a journey of growth, innovation, and transformation. In 2015, it elevated its status to a private limited company, marking a significant milestone in its evolution. Today, the company is recognized as a beacon of expertise and reliability in the complex field of power infrastructure.
+        </p>
+
+        <!-- 5th Row: Bullet Ticks -->
+        <ul class="space-y-3">
+          <li class="flex items-center">
+            <Tick class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" />
+            <span class="text-slate-500">Reliability, performance, just manufacturing</span>
+          </li>
+          <li class="flex items-center">
+            <Tick class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" />
+            <span class="text-slate-500">Innovation, Quality And Continuous Improvement</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mission and Vision Section -->
+    <div class="my-12">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Mission & Vision</h2>
+      <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl">
+        <div class="border p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-4">Vision</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            `At KAY CEE ENERGY, we proudly harness over 28 years of experience and engineering prowess to drive forward our mission of delivering dependable, inventive, and sustainable power solutions through innovative projects and products. Our commitment to excellence and technical expertise has allowed us to set an industry standard, epitomizing integrity and professionalism. With a steadfast dedication to ethical project execution and a zero-tolerance approach to compromising safety, we solidify our role as a leader in the energy sector.Our unwavering resolve lies in upholding the ideals of quality and dependability, ultimately empowering local communities and energizing previously untapped regions. In this pursuit, we prioritize our relationships with customers and suppliers, viewing them as partners in our journey. By consistently delivering superior quality and maintaining a reputation for punctuality, we reinforce the trust that our stakeholders have bestowed upon us.
+          </p>
+        </div>
+        <div class="border p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-4">Mission</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            The mission of KAY CEE ENERGY & INFRA PRIVATE LIMITED is to provide reliable, sustainable, and innovative energy and infrastructure solutions that drive economic growth, improve quality of life, and contribute to a greener future. Our core values guide our mission, which are excellence, integrity, and social responsibility. We are committed to delivering excellence in all our endeavors, ensuring that our solutions are of the highest quality, efficient, and meet the specific needs of our clients. We believe in operating with utmost integrity, adhering to ethical practices and maintaining transparency in all our dealings. As a socially responsible company, we strive to contribute to the communities we operate in, considering the social and environmental impact of our projects. our mission is to lead the way in delivering sustainable energy and infrastructure solutions, driving economic development, and creating a better future for all.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <WhyChooseUs /> {/* Added WhyChooseUs component here */}
+
+    {/* Card Layout Section */}
+    <CardLayout
+      title="What We Offer You"
+      cards={[
+        {
+          title: "Transmission lines Towers",
+          image: "/src/assets/services/transmission_lines_towers.jpg",
+          icon: "bi:lightning-charge-fill", // Changed icon
+          description: "High-quality transmission line towers for efficient power distribution."
+        },
+        {
+          title: "Underground Cable EHV",
+          image: "/src/assets/services/underground_cable_ehv.jpg",
+          icon: "bi:ethernet", // Changed icon
+          description: "State-of-the-art underground cables for Extra High Voltage applications."
+        },
+        {
+          title: "Monopole",
+          image: "/src/assets/services/monopole.jpg",
+          icon: "bi:signpost-fill", // Changed icon
+          description: "Durable and efficient monopoles for modern energy infrastructure."
+        },
+        {
+          title: "Substation",
+          image: "/src/assets/services/substation.jpg",
+          icon: "bi:building-gear", // Changed icon
+          description: "Advanced substations for reliable energy management and distribution."
+        },
+      ]}
+      class="text-center text-3xl font-bold mb-6"
+    />
+  </Container>
+</Layout>

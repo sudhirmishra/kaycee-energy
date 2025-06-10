@@ -1,0 +1,86 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <p class="text-sm text-blue-600 font-semibold uppercase tracking-wider">Worldwide Our Services</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Our Global Branch</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {/* Column 1: Contact Info */}
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Registered Office</h3>
+        <p class="text-gray-600 mb-2">
+          📞 <a href="tel:07442372124" class="hover:text-blue-600">0744-2372124</a>, <a href="tel:07442371857" class="hover:text-blue-600">2371857</a>
+          <br />
+          📱 <a href="tel:+919414188324" class="hover:text-blue-600">+91 9414-188-324</a>
+        </p>
+        <p class="text-gray-600 mb-2">
+          📧 <a href="mailto:kaycee.energy.infra@gmail.com" class="hover:text-blue-600">kaycee.energy.infra@gmail.com</a>
+        </p>
+        <p class="text-gray-600">
+          📍 Reg. Offue : 9, Krishna Vihar, Near Chungi Naka, Nanta Road, Kunhadi, KOTA-324008
+        </p>
+      </div>
+
+      {/* Column 2: Company IDs */}
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Company Information</h3>
+        <ul class="text-gray-600 space-y-3">
+          {[
+            { label: "CIN", value: "U74900RJ2015PTC046976", id: "cin" },
+            { label: "PAN No.", value: "AAFCK7333L", id: "pan" },
+            { label: "GSTIN", value: "08AAFCK7333L1Z6", id: "gstin" },
+            { label: "ESI Code No.", value: "15000489690001099", id: "esi" },
+            { label: "EPF Code No.", value: "RJ/KOT/1324107", id: "epf" },
+          ].map(item => (
+            <li class="flex justify-between items-center">
+              <div>
+                <strong>{item.label}:</strong>
+                <span class="ml-1" id={`copy-text-${item.id}`}>{item.value}</span>
+              </div>
+              <button title="Copy to clipboard" class="copy-btn p-1.5 hover:bg-gray-200 rounded text-gray-500 hover:text-gray-700 transition-colors" data-clipboard-target={`#copy-text-${item.id}`}>
+                <Icon name="bi:clipboard" class="clipboard-icon w-4 h-4" />
+                <Icon name="bi:check-lg" class="check-icon w-4 h-4 hidden" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-btn');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.dataset.clipboardTarget;
+        const textToCopy = document.querySelector(targetId)?.innerText;
+        const originalIcon = button.querySelector('.clipboard-icon');
+        const successIcon = button.querySelector('.check-icon');
+
+        if (textToCopy && navigator.clipboard) {
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            if (originalIcon && successIcon) {
+              originalIcon.classList.add('hidden');
+              successIcon.classList.remove('hidden');
+            }
+            setTimeout(() => {
+              if (originalIcon && successIcon) {
+                originalIcon.classList.remove('hidden');
+                successIcon.classList.add('hidden');
+              }
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+          });
+        }
+      });
+    });
+  });
+</script>

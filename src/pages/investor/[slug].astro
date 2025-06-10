@@ -1,0 +1,28 @@
+---
+import InvestorLayout from "./investor.astro"; // Assuming investor.astro is the layout
+import { navItems } from "@/content/investorNavItems.ts";
+
+export async function getStaticPaths() {
+  return navItems.map((item) => {
+    return {
+      params: { slug: item.id },
+      props: { item },
+    };
+  });
+}
+
+const { item } = Astro.props;
+---
+
+<InvestorLayout currentPage={item.id}>
+  <section id={item.id} class="p-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">{item.title}</h2>
+    <p>Content for {item.title}.</p>
+    <p>
+      This is the dedicated page for {item.title}. You can add specific content,
+      data, tables, or any other information relevant to this section here.
+    </p>
+    <p>For example, if this were "Annual Reports", you might list PDF downloads or embed a report viewer.</p>
+    <p>If it were "Shareholder Meeting", you could post agendas, minutes, and video recordings.</p>
+  </section>
+</InvestorLayout>

@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components'; // Import Icon component
+const { cards, title } = Astro.props;
+---
+
+<section class="mt-8">
+  <h2 class="text-3xl font-bold mb-6 text-center">{title}</h2> {/* Centered title based on usage in about.astro */}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> {/* Adjusted grid for potentially 4 items */}
+    {cards.map((card) => (
+      <div class="bg-white border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"> {/* MODIFIED: Removed p-6, items-center, text-center. Added overflow-hidden. */}
+        {card.image && (
+          <div class="w-full h-48"> {/* MODIFIED: Simplified image container */}
+            <img
+              src={card.image}
+              alt={card.title}
+              class="w-full h-full object-cover object-top" // MODIFIED: Changed to object-cover and object-top
+            />
+          </div>
+        )}
+        {/* ADDED: Content wrapper for padding and centering */}
+        <div class="p-6 flex flex-col items-center text-center flex-grow">
+          {/* Use Astro Icon component if card.icon is provided, otherwise fallback to card.logo img */}
+          {card.icon ? (
+            <div class="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center bg-blue-50 text-blue-600 mb-4">
+              <Icon name={card.icon} class="w-8 h-8" />
+            </div>
+          ) : card.logo && (
+            <div class="w-16 h-16 rounded-full border border-gray-300 flex items-center justify-center bg-white mb-4 overflow-hidden">
+              <img
+                src={card.logo}
+                alt={`${card.title} logo`}
+                class="w-10 h-10 object-contain"
+              />
+            </div>
+          )}
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">{card.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">{card.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+import projects from "@/content/projects.json";
+---
+
+<script>
+  if (typeof window !== 'undefined') {
+    window.selectedProject = undefined;
+  }
+</script>
+
+<Layout title="Projects">
+  <Hero title="Projects" />
+  <Container>
+    <!-- Breadcrumb Section -->
+    <div class="mt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="flex space-x-2 text-gray-600">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li>/</li>
+          <li>Projects</li>
+        </ol>
+      </nav>
+    </div>
+
+    <h1 class="text-center text-3xl font-bold mb-6">Projects</h1>
+    <p class="text-center mb-8">Discover our projects.</p>
+
+    {typeof window !== 'undefined' && window.selectedProject !== undefined ? (
+      <div class="p-4 border rounded shadow">
+        <button
+          class="inline-block px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 mb-4"
+          onClick={() => {
+            window.selectedProject = undefined;
+          }}
+        >
+          Back to Projects
+        </button>
+        <div class="relative w-full h-50 overflow-hidden mb-4 rounded">
+          <img
+            src={window.selectedProject.image}
+            alt={window.selectedProject.title}
+            class="w-full h-auto object-top"
+          />
+        </div>
+        <h3 class="text-xl font-semibold text-center mb-4">{window.selectedProject.title}</h3>
+        <p>{window.selectedProject.description}</p>
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {projects.map((project, index) => (
+          <div key={index} class="p-4 border rounded shadow">
+            <div class="relative w-full h-50 overflow-hidden mb-4 rounded">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-auto object-top"
+              />
+              <div class="absolute bottom-0 left-0 bg-blue-500 text-white text-sm px-2 py-1">
+                {project.category}
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-center mb-4">{project.title}</h3>
+            <p class="text-center mb-4">{project.description}</p>
+            <div class="text-center mt-4">
+              <button
+                class="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                onClick={() => {
+                  window.selectedProject = project;
+                }}
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </Container>
+</Layout>

@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro"; // Import Hero component
+---
+
+<Layout title="Our Team">
+  <Hero title="Our Team" />
+  <Container>
+    <!-- Breadcrumb Section -->
+    <div class="mt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="flex space-x-2 text-gray-600">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li>/</li>
+          <li><a href="/company" class="hover:underline">Company</a></li>
+          <li>/</li>
+          <li>Our Team</li>
+        </ol>
+      </nav>
+    </div>
+    
+    <h1>Our Team</h1>
+    <p>Meet the amazing team behind our success.</p>
+  </Container>
+</Layout>

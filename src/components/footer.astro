@@ -1,19 +1,69 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Astroship. All rights reserved.
-  </p>
-  <!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-  <p class="text-center text-xs text-slate-500 mt-1">
-    Made by <a
-      href="https://web3templates.com"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      Web3Templates
-    </a>
-  </p>
+---
+import Container from "@/components/container.astro";
+---
+<footer class="bg-gray-100 text-gray-700 pt-12 pb-8">
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <!-- Column 1: Pages -->
+      <div>
+        <h5 class="text-lg font-semibold mb-4">Pages</h5>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-blue-600 hover:underline">Home</a></li>
+          <li><a href="/about" class="hover:text-blue-600 hover:underline">About Us</a></li>
+          <li><a href="/services" class="hover:text-blue-600 hover:underline">Services</a></li>
+          <li><a href="/projects" class="hover:text-blue-600 hover:underline">Projects</a></li>
+          <li><a href="/news" class="hover:text-blue-600 hover:underline">News</a></li>
+          <li><a href="/contact" class="hover:text-blue-600 hover:underline">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Get In Touch -->
+      <div>
+        <h5 class="text-lg font-semibold mb-4">Get In Touch</h5>
+        <ul class="space-y-2">
+          <li>
+            <a href="tel:+916377208324" class="hover:text-blue-600 hover:underline">
+              📞 +91 6377208324
+            </a>
+          </li>
+          <li>
+            <a href="mailto:kaycee.energy.infra@gmail.com" class="hover:text-blue-600 hover:underline">
+              📧 kaycee.energy.infra@gmail.com
+            </a>
+          </li>
+          <li class="text-sm">
+            📍 G-249 , Road no. 5 Indra prasth Industrial Area, Kota Rajasthan, 324005
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Empty -->
+      <div>
+        {/* <h5 class="text-lg font-semibold mb-4">Column 3</h5> */}
+        {/* Content for column 3 can be added here */}
+      </div>
+
+      <!-- Column 4: Empty -->
+      <div>
+        {/* <h5 class="text-lg font-semibold mb-4">Column 4</h5> */}
+        {/* Content for column 4 can be added here */}
+      </div>
+    </div>
+
+    {/* Copyright and Attribution */}
+    <div class="border-t border-gray-300 pt-8 mt-8 text-center">
+      <p class="text-sm text-slate-500">
+        Copyright © {new Date().getFullYear()} Kay Cee Energy. All rights reserved.
+      </p>
+      <p class="text-xs text-slate-500 mt-1">
+        Made by <a
+          href="https://web3templates.com"
+          target="_blank"
+          rel="noopener"
+          class="hover:underline">
+          Web3Templates
+        </a> (Original Template)
+      </p>
+    </div>
+  </Container>
 </footer>

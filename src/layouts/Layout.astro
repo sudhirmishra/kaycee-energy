@@ -55,9 +55,25 @@ const makeTitle = title
       }}
     />
   </head>
-  <body>
+  <body class="bg-white text-gray-900 antialiased">
+    <div class="bg-blue-600 text-white py-2 px-4 text-sm">
+      <div class="container mx-auto flex flex-col sm:flex-row justify-center items-center text-center sm:text-left">
+        <div class="flex flex-col sm:flex-row items-center sm:space-x-4 mb-2 sm:mb-0">
+          <span>📞 <a href="tel:+916377208324" class="hover:underline">+91 6377208324</a></span>
+          <span class="hidden sm:inline">|</span>
+          <span>📧 <a href="mailto:kaycee.energy.infra@gmail.com" class="hover:underline">kaycee.energy.infra@gmail.com</a></span>
+        </div>
+        <div class="hidden sm:block mx-4">|</div>
+        <div>
+          <span>📍 G-249 , Road no. 5 Indra prasth Industrial Area, Kota Rajasthan, 324005</span>
+        </div>
+      </div>
+    </div>
     <Navbar />
-    <slot />
+    <main>
+      <slot />
+    </main>
+    <div class="my-12"></div>
     <Footer />
     <style is:global>
       /* Improve Page speed */

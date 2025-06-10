@@ -1,0 +1,78 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+import CardLayout from "@/components/CardLayout.astro";
+import Testimonials from "@/components/Testimonials.astro";
+---
+
+<Layout title="Services">
+  <Hero title="Services" />
+  <Container>
+    <!-- Breadcrumb Section -->
+    <div class="mt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="flex space-x-2 text-gray-600">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li>/</li>
+          <li>Services</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Card Layout Section -->
+    <CardLayout
+      title="What We Offer You"
+      cards={[
+        {
+          title: "Transmission lines Towers",
+          image: "/src/assets/services/transmission_lines_towers.jpg",
+          icon: "bi:lightning-charge-fill", // Changed icon
+          description: "High-quality transmission line towers for efficient power distribution."
+        },
+        {
+          title: "Underground Cable EHV",
+          image: "/src/assets/services/underground_cable_ehv.jpg",
+          icon: "bi:ethernet", // Changed icon
+          description: "State-of-the-art underground cables for Extra High Voltage applications."
+        },
+        {
+          title: "Monopole",
+          image: "/src/assets/services/monopole.jpg",
+          icon: "bi:signpost-fill", // Changed icon
+          description: "Durable and efficient monopoles for modern energy infrastructure."
+        },
+        {
+          title: "Substation",
+          image: "/src/assets/services/substation.jpg",
+          icon: "bi:building-gear", // Changed icon
+          description: "Advanced substations for reliable energy management and distribution."
+        },
+      ]}
+      class="text-center text-3xl font-bold mb-6"
+    />
+
+    <!-- Testimonial Section -->
+    <Testimonials
+      title="Client's Feedback"
+      testimonials={[
+        {
+          feedback: "Kay Cee Energy's EPC services were exceptional. Their state-of-the-art solutions for EHV power transmission lines were executed flawlessly. Their commitment to quality and efficiency is commendable. They understand the energy sector's demands and deliver with precision. We highly recommend their services for reliable and innovative power transmission solutions.",
+          client: "Deepak Jain",
+          photo: "/src/assets/testimonials/deepak_jain.jpg"
+        },
+        {
+          feedback: "KAY CEE ENERGY's work process is exceptional. Their EPC solutions for Extra High Voltage power transmission lines are truly state-of-the-art. They not only meet deadlines but also prioritize environmental responsibility. Their commitment to efficiency and quality is evident in every project. Highly recommended for top-notch energy infrastructure solutions.",
+          client: "Sudhanshu",
+          photo: "/src/assets/testimonials/sudhanshu.jpg"
+        },
+        {
+          feedback: "Working with Kay Cee Energy has been a remarkable experience. Their EPC process for Extra High Voltage power transmission lines is exemplary. Their team's expertise, attention to detail, and commitment to quality are truly commendable. They deliver state-of-the-art solutions efficiently, ensuring our project's success and reliability. Highly recommended!",
+          client: "Aman Gupta",
+          photo: "/src/assets/testimonials/aman_gupta.jpg"
+        },
+      ]}
+      class="text-center text-3xl font-bold mb-6"
+    />
+  </Container>
+</Layout>
