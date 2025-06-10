@@ -20,6 +20,17 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+
+      - name: Move assets to public directory
+        run: |
+          mkdir -p public/assets
+          if [ -d "src/assets" ]; then
+            cp -R src/assets/* public/assets/
+            echo "Moved src/assets to public/assets"
+          else
+            echo "src/assets directory not found, skipping move."
+          fi
+
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         with:
