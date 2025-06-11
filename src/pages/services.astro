@@ -4,6 +4,38 @@ import Container from "@/components/container.astro";
 import Hero from "@/components/hero.astro";
 import CardLayout from "@/components/CardLayout.astro";
 import Testimonials from "@/components/Testimonials.astro";
+
+import transmissionLinesTowersImg from "@/assets/services/transmission_lines_towers.jpg";
+import undergroundCableEhvImg from "@/assets/services/underground_cable_ehv.jpg";
+import monopoleImg from "@/assets/services/monopole.jpg";
+import substationImg from "@/assets/services/substation.jpg";
+
+const servicesCards = [
+  {
+    title: "Transmission lines Towers",
+    image: transmissionLinesTowersImg.src,
+    icon: "bi:lightning-charge-fill", // Changed icon
+    description: "High-quality transmission line towers for efficient power distribution."
+  },
+  {
+    title: "Underground Cable EHV",
+    image: undergroundCableEhvImg.src,
+    icon: "bi:ethernet", // Changed icon
+    description: "State-of-the-art underground cables for Extra High Voltage applications."
+  },
+  {
+    title: "Monopole",
+    image: monopoleImg.src,
+    icon: "bi:signpost-fill", // Changed icon
+    description: "Durable and efficient monopoles for modern energy infrastructure."
+  },
+  {
+    title: "Substation",
+    image: substationImg.src,
+    icon: "bi:building-gear", // Changed icon
+    description: "Advanced substations for reliable energy management and distribution."
+  },
+];
 ---
 
 <Layout title="Services">
@@ -23,56 +55,8 @@ import Testimonials from "@/components/Testimonials.astro";
     <!-- Card Layout Section -->
     <CardLayout
       title="What We Offer You"
-      cards={[
-        {
-          title: "Transmission lines Towers",
-          image: "/assets/services/transmission_lines_towers.jpg",
-          icon: "bi:lightning-charge-fill", // Changed icon
-          description: "High-quality transmission line towers for efficient power distribution."
-        },
-        {
-          title: "Underground Cable EHV",
-          image: "/assets/services/underground_cable_ehv.jpg",
-          icon: "bi:ethernet", // Changed icon
-          description: "State-of-the-art underground cables for Extra High Voltage applications."
-        },
-        {
-          title: "Monopole",
-          image: "/assets/services/monopole.jpg",
-          icon: "bi:signpost-fill", // Changed icon
-          description: "Durable and efficient monopoles for modern energy infrastructure."
-        },
-        {
-          title: "Substation",
-          image: "/assets/services/substation.jpg",
-          icon: "bi:building-gear", // Changed icon
-          description: "Advanced substations for reliable energy management and distribution."
-        },
-      ]}
-      class="text-center text-3xl font-bold mb-6"
+      cards={servicesCards}
     />
-
-    <!-- Testimonial Section -->
-    <Testimonials
-      title="Client's Feedback"
-      testimonials={[
-        {
-          feedback: "Kay Cee Energy's EPC services were exceptional. Their state-of-the-art solutions for EHV power transmission lines were executed flawlessly. Their commitment to quality and efficiency is commendable. They understand the energy sector's demands and deliver with precision. We highly recommend their services for reliable and innovative power transmission solutions.",
-          client: "Deepak Jain",
-          photo: "/assets/testimonials/deepak_jain.jpg"
-        },
-        {
-          feedback: "KAY CEE ENERGY's work process is exceptional. Their EPC solutions for Extra High Voltage power transmission lines are truly state-of-the-art. They not only meet deadlines but also prioritize environmental responsibility. Their commitment to efficiency and quality is evident in every project. Highly recommended for top-notch energy infrastructure solutions.",
-          client: "Sudhanshu",
-          photo: "/assets/testimonials/sudhanshu.jpg"
-        },
-        {
-          feedback: "Working with Kay Cee Energy has been a remarkable experience. Their EPC process for Extra High Voltage power transmission lines is exemplary. Their team's expertise, attention to detail, and commitment to quality are truly commendable. They deliver state-of-the-art solutions efficiently, ensuring our project's success and reliability. Highly recommended!",
-          client: "Aman Gupta",
-          photo: "/assets/testimonials/aman_gupta.jpg"
-        },
-      ]}
-      class="text-center text-3xl font-bold mb-6"
-    />
+    <Testimonials />
   </Container>
 </Layout>
