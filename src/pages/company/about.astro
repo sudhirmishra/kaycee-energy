@@ -5,6 +5,44 @@ import Hero from "@/components/hero.astro"; // Import Hero component
 import CardLayout from "@/components/CardLayout.astro"; // Import CardLayout component
 import Tick from "@/components/ui/icons/tick.astro"; // Import Tick icon
 import WhyChooseUs from "@/components/WhyChooseUs.astro"; // Import WhyChooseUs component
+
+// Import images for the collage
+import hero21Img from "@/assets/about/hero-2-1.jpg";
+import hero22Img from "@/assets/about/hero-2-2.jpg";
+import hero23Img from "@/assets/about/hero-2-3.jpg";
+
+// Import images for the CardLayout
+import transmissionLinesTowersImg from "@/assets/services/transmission_lines_towers.jpg";
+import undergroundCableEhvImg from "@/assets/services/underground_cable_ehv.jpg";
+import monopoleImg from "@/assets/services/monopole.jpg";
+import substationImg from "@/assets/services/substation.jpg";
+
+const offerCards = [
+  {
+    title: "Transmission lines Towers",
+    image: transmissionLinesTowersImg.src,
+    icon: "bi:lightning-charge-fill",
+    description: "High-quality transmission line towers for efficient power distribution."
+  },
+  {
+    title: "Underground Cable EHV",
+    image: undergroundCableEhvImg.src,
+    icon: "bi:ethernet",
+    description: "State-of-the-art underground cables for Extra High Voltage applications."
+  },
+  {
+    title: "Monopole",
+    image: monopoleImg.src,
+    icon: "bi:signpost-fill",
+    description: "Durable and efficient monopoles for modern energy infrastructure."
+  },
+  {
+    title: "Substation",
+    image: substationImg.src,
+    icon: "bi:building-gear",
+    description: "Advanced substations for reliable energy management and distribution."
+  },
+];
 ---
 
 <Layout title="About">
@@ -28,17 +66,17 @@ import WhyChooseUs from "@/components/WhyChooseUs.astro"; // Import WhyChooseUs 
       <!-- Left Column: Image Collage -->
       <div class="relative h-64 sm:h-80 md:h-96 group">
         <img 
-          src="/src/assets/about/hero-2-2.jpg" 
+          src={hero22Img.src} 
           alt="Kay Cee Energy Collage Image 1" 
           class="absolute top-0 left-0 w-7/12 h-7/12 object-cover rounded-xl shadow-lg transform transition-transform duration-300 group-hover:scale-105 z-10" 
         />
         <img 
-          src="/src/assets/about/hero-2-3.jpg" 
+          src={hero23Img.src} 
           alt="Kay Cee Energy Collage Image 2" 
           class="absolute bottom-0 right-0 w-7/12 h-7/12 object-cover rounded-xl shadow-lg transform transition-transform duration-300 group-hover:scale-105 z-10" 
         />
         <img 
-          src="/src/assets/about/hero-2-1.jpg" 
+          src={hero21Img.src} 
           alt="Kay Cee Energy Collage Image 3 (Centered)" 
           class="absolute top-1/2 left-1/2 w-8/12 h-8/12 object-cover rounded-xl shadow-xl transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:scale-110 z-20" 
         />
@@ -121,32 +159,7 @@ import WhyChooseUs from "@/components/WhyChooseUs.astro"; // Import WhyChooseUs 
     {/* Card Layout Section */}
     <CardLayout
       title="What We Offer You"
-      cards={[
-        {
-          title: "Transmission lines Towers",
-          image: "/src/assets/services/transmission_lines_towers.jpg",
-          icon: "bi:lightning-charge-fill", // Changed icon
-          description: "High-quality transmission line towers for efficient power distribution."
-        },
-        {
-          title: "Underground Cable EHV",
-          image: "/src/assets/services/underground_cable_ehv.jpg",
-          icon: "bi:ethernet", // Changed icon
-          description: "State-of-the-art underground cables for Extra High Voltage applications."
-        },
-        {
-          title: "Monopole",
-          image: "/src/assets/services/monopole.jpg",
-          icon: "bi:signpost-fill", // Changed icon
-          description: "Durable and efficient monopoles for modern energy infrastructure."
-        },
-        {
-          title: "Substation",
-          image: "/src/assets/services/substation.jpg",
-          icon: "bi:building-gear", // Changed icon
-          description: "Advanced substations for reliable energy management and distribution."
-        },
-      ]}
+      cards={offerCards}
       class="text-center text-3xl font-bold mb-6"
     />
   </Container>
