@@ -10,6 +10,10 @@ import undergroundCableEhvImg from "@/assets/services/underground_cable_ehv.jpg"
 import monopoleImg from "@/assets/services/monopole.jpg";
 import substationImg from "@/assets/services/substation.jpg";
 
+import amanGuptaImg from "@/assets/testimonials/aman_gupta.jpg";
+import deepakJainImg from "@/assets/testimonials/deepak_jain.jpg";
+import sudhanshuImg from "@/assets/testimonials/sudhanshu.jpg";
+
 const servicesCards = [
   {
     title: "Transmission lines Towers",
@@ -36,6 +40,24 @@ const servicesCards = [
     description: "Advanced substations for reliable energy management and distribution."
   },
 ];
+
+const pageTestimonials = [
+  {
+    client: "Aman Gupta",
+    feedback: "Kaycee Energy's services have been crucial for our infrastructure projects. Their expertise in transmission lines is unmatched.",
+    photo: amanGuptaImg.src,
+  },
+  {
+    client: "Deepak Jain",
+    feedback: "The underground cable work done by Kaycee Energy was top-notch. Professional, timely, and efficient.",
+    photo: deepakJainImg.src,
+  },
+  {
+    client: "Sudhanshu Kumar",
+    feedback: "We are extremely satisfied with the substation solutions provided. Kaycee Energy delivers quality and reliability.",
+    photo: sudhanshuImg.src,
+  },
+];
 ---
 
 <Layout title="Services">
@@ -57,6 +79,6 @@ const servicesCards = [
       title="What We Offer You"
       cards={servicesCards}
     />
-    <Testimonials />
+    <Testimonials title="What Our Clients Say" testimonials={pageTestimonials} />
   </Container>
 </Layout>
