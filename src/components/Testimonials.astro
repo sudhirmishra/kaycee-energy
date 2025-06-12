@@ -4,6 +4,8 @@ const { testimonials, title } = Astro.props;
 
 <section class="mt-8">
   <h2 class="text-3xl font-bold mb-6 text-center">{title}</h2>
+  <p class="text-center text-gray-500 mb-8">Hear from our valued clients about their experience with Kaycee Energy & Infra.</p>
+
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     {testimonials.map((testimonial) => (
       <div class="p-4 border rounded shadow bg-gray-100">

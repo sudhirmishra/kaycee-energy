@@ -1,10 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components'; // Import Icon component
-const { cards, title } = Astro.props;
+const { cards, title, subtitle } = Astro.props;
 ---
 
 <section class="mt-8">
-  <h2 class="text-3xl font-bold mb-6 text-center">{title}</h2> {/* Centered title based on usage in about.astro */}
+  <h2 class="text-3xl font-bold mb-2 text-center">{title}</h2>
+  <p class="text-center text-gray-500 mb-6">{subtitle || 'Providing Value To Our Clients Through Ongoing Product Updates And Everlasting Innovation.'}</p>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> {/* Adjusted grid for potentially 4 items */}
     {cards.map((card) => (
       <div class="bg-white border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"> {/* MODIFIED: Removed p-6, items-center, text-center. Added overflow-hidden. */}

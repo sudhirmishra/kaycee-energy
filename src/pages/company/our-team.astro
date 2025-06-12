@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import TeamGridCard from "@/components/TeamGridCard.astro";
 import TeamGridCardNoPhoto from "@/components/TeamGridCardNoPhoto.astro";
+import Hero from "@/components/hero.astro";
 import img1 from "@/assets/team/1.jpg";
 import img2 from "@/assets/team/2.jpg";
 import img3 from "@/assets/team/3.jpg";
@@ -12,8 +13,13 @@ import img6 from "@/assets/team/6.jpg";
 ---
 
 <Layout title="Our Team">
+  <Hero
+    title="Our Team"
+    subtitle="The people behind Kaycee Energy & Infra's success"
+    image={img1.src}
+    class="mb-10"
+  />
   <Container>
-    <h1 class="text-4xl font-bold mb-8 text-center">Our Team</h1>
     <TeamGridCard
       title="Our Leaders"
       people={[

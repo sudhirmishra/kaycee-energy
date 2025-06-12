@@ -4,7 +4,7 @@
 const { people = [], title = "" } = Astro.props;
 ---
 <section class="mb-16">
-  {title && <h2 class="text-2xl font-bold mb-6 text-center">{title}</h2>}
+  {title && <h2 class="text-4xl font-extrabold mb-6 text-center">{title}</h2>}
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
     {people.map((person) => (
       <div class="flex flex-col items-center justify-center bg-white rounded-lg shadow p-8 min-h-[260px]">
