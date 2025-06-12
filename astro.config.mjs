@@ -7,7 +7,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://sudhirmishra.github.io",
-  base: "/kaycee-energy/",
+  base: "kaycee-energy",
   integrations: [mdx(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],
