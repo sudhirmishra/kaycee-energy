@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getResolvedPath } from "@/utils/all.js";
+import projectOneImg from "@/assets/project_1.jpg";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+---
+
+<Layout title="Deposit Work for Wonder Cement">
+  <Hero 
+    title="Deposit Work for Wonder Cement"
+    subtitle="Project Detail"
+    image={projectOneImg.src}
+    class="mb-6"
+  />
+  <Container>
+      <div class="mt-4">
+        <nav class="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
+        <ol class="list-none flex flex-wrap gap-2 items-center">
+            <li><a href={getResolvedPath("/")} class="hover:text-blue-700">Home</a></li>
+            <li>/</li>
+            <li><a href={getResolvedPath("/projects")} class="hover:text-blue-700">Projects</a></li>
+            <li>/</li>
+            <li class="text-gray-700 font-semibold">Deposit Work for Wonder Cement</li>
+        </ol>
+        </nav>
+        <div>
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 order-2 md:order-1">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">Deposit Work for Wonder Cement</h1>
+          <div class="text-blue-700 font-medium text-base flex items-center gap-1 mb-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 mr-1 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Nimbahera, Rajasthan
+          </div>
+          <div class="text-green-700 font-medium text-base flex items-center gap-1 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 13c-4.418 0-8-3.582-8-8 0-3.314 2.686-6 6-6s6 2.686 6 6c0 4.418-3.582 8-8 8z" /></svg>
+            ₹3.2 Crore
+          </div>
+          <div class="text-lg leading-relaxed text-gray-700 space-y-5">
+            <p>
+              The Diversion of Existing 220 kV and Two Nos. 132 kV transmission lines from the mining area to an alternative route within the premises of M/S. Wonder Cement Works is a critical project. Serving as a deposit work for Wonder Cement, it involves rerouting power lines to minimize disruptions caused by mining operations.
+            </p>
+            <p>
+              This project ensures the uninterrupted power supply required for the cement manufacturing process, maintaining production efficiency. It also promotes safety and environmental responsibility by reducing the impact of mining on existing infrastructure.
+            </p>
+            <p>
+              The project's successful execution guarantees stable energy supply, supporting Wonder Cement's operations and contributing to local economic growth.
+            </p>
+          </div>
+        </div>
+        <div class="flex-1 order-1 md:order-2 flex justify-center">
+          <img src={projectOneImg.src} alt="Deposit Work for Wonder Cement" class="rounded-lg shadow w-full max-w-md object-cover" />
+        </div>
+      </div>
+  </Container>
+</Layout>

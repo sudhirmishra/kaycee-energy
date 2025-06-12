@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getResolvedPath } from "@/utils/all.js";
+import projectFiveImg from "@/assets/project_5.jpg";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+---
+
+<Layout title="Gas Insulated Substation (GSS) in Bhawani Mandi">
+  <Hero 
+    title="Gas Insulated Substation (GSS) in Bhawani Mandi"
+    subtitle="Project Detail"
+    image={projectFiveImg.src}
+    class="mb-6"
+  />
+  <Container>
+      <div class="mt-4">
+        <nav class="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
+        <ol class="list-none flex flex-wrap gap-2 items-center">
+            <li><a href={getResolvedPath("/")} class="hover:text-blue-700">Home</a></li>
+            <li>/</li>
+            <li><a href={getResolvedPath("/projects")} class="hover:text-blue-700">Projects</a></li>
+            <li>/</li>
+            <li class="text-gray-700 font-semibold">Gas Insulated Substation (GSS) in Bhawani Mandi</li>
+        </ol>
+        </nav>
+        <div>
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 order-2 md:order-1">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">Gas Insulated Substation (GSS) in Bhawani Mandi</h1>
+          <div class="text-blue-700 font-medium text-base flex items-center gap-1 mb-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 mr-1 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Bhawani Mandi, Mamoni, Nanta, Keshorai Patan, Rajasthan
+          </div>
+          <div class="text-green-700 font-medium text-base flex items-center gap-1 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 13c-4.418 0-8-3.582-8-8 0-3.314 2.686-6 6-6s6 2.686 6 6c0 4.418-3.582 8-8 8z" /></svg>
+            ₹1.25 Crore
+          </div>
+          <div class="text-lg leading-relaxed text-gray-700 space-y-5">
+            <p>
+              The Construction of 220 kV Gas Insulated Substation (GSS) in Bhawani Mandi, along with three 132 kV GSS in Mamoni, Nanta, and Keshorai Patan, collectively valued at INR 1.25 Crore, represents a significant investment in the region's power infrastructure. These substations are instrumental in enhancing the electrical grid's capacity, reliability, and efficiency.
+            </p>
+            <p>
+              The key objectives of this project are: Enhanced Grid Capacity: The 220 kV GSS in Bhawani Mandi and the three 132 kV GSS will augment the grid's capacity, allowing for the transmission of higher loads, meeting the growing energy demands of the area. Improved Reliability: The new substations will improve the reliability of power supply, reducing downtime and enhancing the quality of electricity delivered to consumers. Grid Expansion: These substations facilitate the expansion of the electricity distribution network, supporting future industrial and residential growth. Economic Development: A robust power infrastructure is essential for attracting investments and fostering economic development.
+            </p>
+            <p>
+              By investing in these substations, the project aims to modernize the region's power infrastructure, ensuring a stable and sustainable electricity supply, which is vital for economic progress, industrial growth, and improved living standards.
+            </p>
+          </div>
+        </div>
+        <div class="flex-1 order-1 md:order-2 flex justify-center">
+          <img src={projectFiveImg.src} alt="Gas Insulated Substation (GSS) in Bhawani Mandi" class="rounded-lg shadow w-full max-w-md object-cover" />
+        </div>
+      </div>
+  </Container>
+</Layout>

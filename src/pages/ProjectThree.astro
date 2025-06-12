@@ -1,0 +1,106 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getResolvedPath } from "@/utils/all.js";
+import projectThreeImg from "@/assets/project_3.jpg";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+---
+
+<Layout title="Gangdhar Line">
+  <Hero
+    title="Gangdhar Line"
+    subtitle="Project Detail"
+    image={projectThreeImg.src}
+    class="mb-6"
+  />
+  <Container>
+      <div class="mt-4">
+        <nav class="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
+        <ol class="list-none flex flex-wrap gap-2 items-center">
+            <li><a href={getResolvedPath("/")} class="hover:text-blue-700">Home</a></li>
+            <li>/</li>
+            <li><a href={getResolvedPath("/projects")} class="hover:text-blue-700">Projects</a></li>
+            <li>/</li>
+            <li class="text-gray-700 font-semibold">Gangdhar Line</li>
+        </ol>
+        </nav>
+        <div>
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 order-2 md:order-1">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">Gangdhar Line</h1>
+          <div class="text-blue-700 font-medium text-base flex items-center gap-1 mb-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="inline w-5 h-5 mr-1 text-blue-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            Dug to Gangdhar, Rajasthan
+          </div>
+          <div class="text-green-700 font-medium text-base flex items-center gap-1 mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="inline w-5 h-5 mr-1 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 13c-4.418 0-8-3.582-8-8 0-3.314 2.686-6 6-6s6 2.686 6 6c0 4.418-3.582 8-8 8z"
+              />
+            </svg>
+            ₹1.25 Crore
+          </div>
+          <div class="text-lg leading-relaxed text-gray-700 space-y-5">
+            <p>
+              The Construction of the 132 kV Single Circuit (S/C) Dug-Gangdhar Line,
+              with an estimated cost of INR 1.25 Crore, is a crucial infrastructure
+              project aimed at enhancing the electrical transmission capacity in the
+              region. This project involves the installation of high-quality
+              transmission cables, towers, and associated equipment to facilitate the
+              efficient transfer of electricity.
+            </p>
+            <p>
+              The primary objectives of this project are to: Improve Power Reliability:
+              The new transmission line will reduce power outages and voltage
+              fluctuations, ensuring a more reliable electricity supply for the region.
+              Economic Growth: Reliable power supply is vital for industrial and
+              economic development, making this project a catalyst for local progress.
+              Environmental Considerations: The project will adhere to environmental
+              standards to minimize its impact on the surroundings.
+            </p>
+            <p>
+              With these goals in mind, the Construction of the 132 kV S/C Dug-Gangdhar
+              Line will contribute to the region's sustainable development and improved
+              quality of life.
+            </p>
+          </div>
+        </div>
+        <div class="flex-1 order-1 md:order-2 flex justify-center">
+          <img
+            src={projectThreeImg.src}
+            alt="Gangdhar Line"
+            class="rounded-lg shadow w-full max-w-md object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>

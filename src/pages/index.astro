@@ -5,13 +5,226 @@ import Features from "@/components/features.astro";
 import Hero from "@/components/hero.astro";
 import Logos from "@/components/logos.astro";
 import Layout from "@/layouts/Layout.astro";
+import CardLayout from "@/components/CardLayout.astro";
+import WhyChooseUs from "@/components/WhyChooseUs.astro";
+import WorkProcessSection from "@/components/WorkProcessSection.astro";
+import ProjectCards from "@/components/ProjectCards.astro";
+import transmissionLinesTowersImg from "@/assets/services/transmission_lines_towers.jpg";
+import undergroundCableEhvImg from "@/assets/services/underground_cable_ehv.jpg";
+import monopoleImg from "@/assets/services/monopole.jpg";
+import substationImg from "@/assets/services/substation.jpg";
+import homeSlideOne from "@/assets/home_slide_one.jpg";
+import homeSlideTwo from "@/assets/home_slide_two.jpg";
+import homeSlideThree from "@/assets/home_slide_three.jpg";
+import projectsData from "@/content/projects.json";
+import { getResolvedPath } from "@/utils/all.js";
+
+const offerCards = [
+  {
+    title: "Transmission lines Towers",
+    image: transmissionLinesTowersImg.src,
+    icon: "bi:lightning-charge-fill",
+    description: "High-quality transmission line towers for efficient power distribution."
+  },
+  {
+    title: "Underground Cable EHV",
+    image: undergroundCableEhvImg.src,
+    icon: "bi:ethernet",
+    description: "State-of-the-art underground cables for Extra High Voltage applications."
+  },
+  {
+    title: "Monopole",
+    image: monopoleImg.src,
+    icon: "bi:signpost-fill",
+    description: "Durable and efficient monopoles for modern energy infrastructure."
+  },
+  {
+    title: "Substation",
+    image: substationImg.src,
+    icon: "bi:building-gear",
+    description: "Advanced substations for reliable energy management and distribution."
+  },
+];
+
+const carouselSlides = [
+  {
+    subtitle: "EHV Solutions with Excellence and Innovation",
+    title: "Powering Progress",
+    bg: homeSlideOne.src,
+  },
+  {
+    subtitle: "Empowering India's Energy Future with KAY Cee",
+    title: "Innovation in Every Watt",
+    bg: homeSlideTwo.src,
+  },
+  {
+    subtitle: "Lighting the Path to Sustainable Energy Solutions",
+    title: "KAY Cee Energy",
+    bg: homeSlideThree.src,
+  },
+];
+
+// Map project images to the new project_1.jpg ... project_11.jpg files
+const projectImages = [
+  'project_1.jpg',
+  'project_2.jpg',
+  'project_3.jpg',
+  'project_4.jpg',
+  'project_5.jpg',
+  'project_6.jpg',
+  'project_7.jpg',
+  'project_8.jpg',
+  'project_9.jpg',
+  'project_10.jpg',
+  'project_11.jpg',
+];
+
+const homeProjects = [
+  {
+    title: "Deposit Work for Wonder Cement",
+    description: `The Diversion of Existing 220 kV and Two Nos. 132 kV transmission lines from the mining area to an alternative route within the premises of M/S. Wonder Cement Works is a critical project. Serving as a deposit work for Wonder Cement, it involves rerouting power lines to minimize disruptions caused by mining operations. This project ensures the uninterrupted power supply required for the cement manufacturing process, maintaining production efficiency. It also promotes safety and environmental responsibility by reducing the impact of mining on existing infrastructure. The project's successful execution guarantees stable energy supply, supporting Wonder Cement's operations and contributing to local economic growth.`,
+    importedImageSrc: (await import("../assets/project_1.jpg")).default.src,
+  },
+  {
+    title: "Morak Bhawanimandi Transmission Line",
+    description: `The Construction of the 220 kV Single Circuit (S/C) Morak - Bhawanimandi transmission line, stretching across a distance of 41.0 kilometers, marked a significant milestone in the enhancement of the regional power infrastructure. This project, with an estimated budget of INR 5.86 Crore, aimed to bolster electricity transmission capacity and reliability within the area. The scope of work encompassed the erection of high-voltage transmission towers, deployment of conductors, insulators, and associated electrical components. A team of skilled engineers and laborers executed the project with a strong commitment to safety and quality. One of the primary objectives of this venture was to reduce transmission losses, minimize voltage fluctuations, and enhance the overall efficiency of electricity distribution. Furthermore, it aimed to fortify the power grid's resilience to adverse weather conditions and load fluctuations, thereby mitigating the risk of power outages. The successful completion of the 220 kV S/C Morak - Bhawanimandi transmission line played a pivotal role in improving the region's power infrastructure. It contributed to a more reliable electricity supply, supported economic growth, and addressed the rising energy demands of the area. This strategic investment in the power sector served as a catalyst for development and prosperity.`,
+    importedImageSrc: (await import("../assets/project_2.jpg")).default.src,
+  },
+  {
+    title: "Gangdhar Line",
+    description: `The Construction of the 132 kV Single Circuit (S/C) Dug-Gangdhar Line, with an estimated cost of INR 1.25 Crore, is a crucial infrastructure project aimed at enhancing the electrical transmission capacity in the region. This project involves the installation of high-quality transmission cables, towers, and associated equipment to facilitate the efficient transfer of electricity. The primary objectives of this project are to: Improve Power Reliability: The new transmission line will reduce power outages and voltage fluctuations, ensuring a more reliable electricity supply for the region. Economic Growth: Reliable power supply is vital for industrial and economic development, making this project a catalyst for local progress. Environmental Considerations: The project will adhere to environmental standards to minimize its impact on the surroundings. With these goals in mind, the Construction of the 132 kV S/C Dug-Gangdhar Line will contribute to the region's sustainable development and improved quality of life.`,
+    importedImageSrc: (await import("../assets/project_3.jpg")).default.src,
+  },
+  {
+    title: "Kalisindh Bhawanimandi Transmission Line",
+    description: `The construction of the 220 kV Single Circuit (S/C) Kalisindh Bhawanimandi transmission line, spanning a distance of 35.0 kilometers, was a significant infrastructure project in the power sector, with an estimated budget of INR 6.55 Crore. This project aimed to enhance the electricity transmission capacity and reliability in the region, ultimately benefiting the residents and industries. The scope of work for this project included the installation of high-voltage transmission towers, conductors, insulators, and associated electrical equipment. Skilled engineers and laborers worked diligently to ensure that the transmission line was constructed to the highest safety and quality standards. One of the key objectives of this project was to reduce transmission losses and voltage drops, thereby improving the overall efficiency of electricity distribution. Additionally, it aimed to strengthen the power grid's resilience to adverse weather conditions and load fluctuations, reducing the risk of blackouts. The successful completion of the 220 kV S/C Kalisindh Bhawanimandi transmission line was a crucial milestone in enhancing the region's power infrastructure. It contributed to reliable electricity supply, supported economic growth, and met the increasing energy demands of the area. This investment in the power sector played a pivotal role in fostering development and prosperity.`,
+    importedImageSrc: (await import("../assets/project_4.jpg")).default.src,
+  },
+  {
+    title: "Gas Insulated Substation (GSS) in Bhawani Mandi",
+    description: `The Construction of 220 kV Gas Insulated Substation (GSS) in Bhawani Mandi, along with three 132 kV GSS in Mamoni, Nanta, and Keshorai Patan, collectively valued at INR 1.25 Crore, represents a significant investment in the region's power infrastructure. These substations are instrumental in enhancing the electrical grid's capacity, reliability, and efficiency. The key objectives of this project are: Enhanced Grid Capacity: The 220 kV GSS in Bhawani Mandi and the three 132 kV GSS will augment the grid's capacity, allowing for the transmission of higher loads, meeting the growing energy demands of the area. Improved Reliability: The new substations will improve the reliability of power supply, reducing downtime and enhancing the quality of electricity delivered to consumers. Grid Expansion: These substations facilitate the expansion of the electricity distribution network, supporting future industrial and residential growth. Economic Development: A robust power infrastructure is essential for attracting investments and fostering economic development. By investing in these substations, the project aims to modernize the region's power infrastructure, ensuring a stable and sustainable electricity supply, which is vital for economic progress, industrial growth, and improved living standards.`,
+    importedImageSrc: (await import("../assets/project_5.jpg")).default.src,
+  },
+];
 ---
 
 <Layout title="">
-  <Hero />
+  <div class="relative w-full overflow-hidden bg-gray-900">
+    <div id="home-carousel" class="relative">
+      <div
+        id="carousel-inner"
+        class="carousel-inner flex transition-transform duration-700"
+        style="width: 300%; transform: translateX(0%);"
+      >
+        {carouselSlides.map((slide, idx) => (
+          <div
+            class="carousel-slide flex flex-col items-center justify-center text-center text-white min-h-[420px] md:min-h-[520px] lg:min-h-[600px] w-full flex-shrink-0"
+            style={`background: linear-gradient(90deg, #0f172a99 60%, #1e293b99 100%), url('${slide.bg}'); background-size: cover; background-position: center;`}
+            key={idx}
+            data-carousel-index={idx}
+          >
+            <p class="text-lg md:text-xl font-semibold mb-2 animate-fadeInUp">{slide.subtitle}</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp delay-100">{slide.title}</h1>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4 animate-fadeInUp delay-200">
+              <a href={getResolvedPath("/services")} class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold text-lg shadow transition">Service We Provide <i class="fas fa-arrow-right"></i></a>
+              <a href={getResolvedPath("/company/about")} class="bg-white hover:bg-gray-100 text-blue-700 px-6 py-3 rounded-lg font-bold text-lg shadow transition border border-blue-600">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        ))}
+      </div>
+      <!-- Carousel controls -->
+      <div class="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-3 z-10">
+        {carouselSlides.map((_, idx) => (
+          <button
+            type="button"
+            class="carousel-dot w-3 h-3 rounded-full bg-white/70 border border-blue-600 transition-all duration-300 focus:outline-none"
+            aria-label={`Go to slide ${idx + 1}`}
+            data-carousel-control={idx}
+          ></button>
+        ))}
+      </div>
+    </div>
+  </div>
   <Container>
-    <Features />
-    <Logos />
-    <Cta />
+    <section class="w-full py-16">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 order-2 md:order-1">
+          <div class="mb-2 text-blue-700 font-semibold text-lg">Since 1996</div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Company Overview</h2>
+          <p class="text-lg text-gray-700 mb-8 max-w-2xl">
+            Kay Cee Energy & Infra Private Limited, formerly Kay Cee Electricals, originated in 1996 as Lokendra Jain's proprietorship firm. In 2015, it transitioned into a private limited company, expanding its scope in energy and infrastructure solutions, showcasing remarkable growth and adaptability in the dynamic market landscape.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-6 shadow">
+              <h3 class="text-xl font-semibold text-blue-800 mb-2">Industry Leadership</h3>
+              <p class="text-gray-700 text-base">Recognized as a leader in the EPC sector, the company's commitment to innovation, quality, and safety has positioned it as a trusted partner for EHV power transmission projects</p>
+            </div>
+            <div class="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-6 shadow">
+              <h3 class="text-xl font-semibold text-blue-800 mb-2">Specialization in EHV</h3>
+              <p class="text-gray-700 text-base">With a specialization in Extra High Voltage (EHV) power transmission, KAY CEE ENERGY & INFRA PRIVATE LIMITED offers tailored expertise, ensuring reliable and high-capacity transmission solutions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 order-1 md:order-2 flex justify-center">
+          <img src={homeSlideOne.src} alt="Company Overview" class="rounded-xl shadow-2xl w-full max-w-xl object-cover min-h-[340px] md:min-h-[420px] lg:min-h-[500px]" />
+        </div>
+      </div>
+    </section>
+    <WorkProcessSection />
+    <ProjectCards />
+    <WhyChooseUs />
+    <CardLayout
+      title="What We Offer You"
+      cards={offerCards}
+      class="text-center text-3xl font-bold mb-6"
+    />
   </Container>
 </Layout>
+
+<style>
+.carousel-inner {
+  display: flex;
+  width: 300%;
+}
+.carousel-slide {
+  width: 100vw;
+  flex-shrink: 0;
+  transition: opacity 0.7s, transform 0.7s;
+}
+@media (min-width: 768px) {
+  .carousel-slide {
+    min-height: 520px;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-slide {
+    min-height: 600px;
+  }
+}
+.carousel-dot.active {
+  background: #2563eb !important;
+  opacity: 1 !important;
+  border-color: #2563eb !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const inner = document.getElementById('carousel-inner');
+  let active = 0;
+  function goToSlide(idx) {
+    active = idx;
+    inner.style.transform = `translateX(-${active * (100 / slides.length)}%)`;
+    dots.forEach((dot, i) => {
+      if (i === active) dot.classList.add('active');
+      else dot.classList.remove('active');
+    });
+  }
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => goToSlide(idx));
+  });
+  goToSlide(0);
+});
+</script>

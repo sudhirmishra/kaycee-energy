@@ -1,0 +1,72 @@
+---
+// ProjectCards.astro
+import { getResolvedPath } from "@/utils/all.js";
+
+const projects = [
+  {
+    title: "Deposit Work for Wonder Cement",
+    location: "Nimbahera, Rajasthan",
+    cost: "₹3.2 Crore",
+    importedImageSrc: (await import("../assets/project_1.jpg")).default.src,
+  },
+  {
+    title: "Morak Bhawanimandi Transmission Line",
+    location: "Morak to Bhawanimandi, Rajasthan",
+    cost: "₹5.86 Crore",
+    importedImageSrc: (await import("../assets/project_2.jpg")).default.src,
+  },
+  {
+    title: "Gangdhar Line",
+    location: "Dug to Gangdhar, Rajasthan",
+    cost: "₹1.25 Crore",
+    importedImageSrc: (await import("../assets/project_3.jpg")).default.src,
+  },
+  {
+    title: "Kalisindh Bhawanimandi Transmission Line",
+    location: "Kalisindh to Bhawanimandi, Rajasthan",
+    cost: "₹6.55 Crore",
+    importedImageSrc: (await import("../assets/project_4.jpg")).default.src,
+  },
+  {
+    title: "Gas Insulated Substation (GSS) in Bhawani Mandi",
+    location: "Bhawani Mandi, Mamoni, Nanta, Keshorai Patan, Rajasthan",
+    cost: "₹1.25 Crore",
+    importedImageSrc: (await import("../assets/project_5.jpg")).default.src,
+  },
+];
+---
+<section class="my-16">
+  <h2 class="text-center text-3xl font-bold mb-8">Our Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map((project, idx) => (
+      <div class="p-4 border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col bg-white">
+        {project.importedImageSrc && (
+          <div class="relative w-full h-64 md:h-72 lg:h-80 overflow-hidden mb-4 rounded-lg">
+            <img
+              src={project.importedImageSrc}
+              alt={project.title}
+              class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        )}
+        <div class="flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-800 mb-1">{project.title}</h3>
+          <div class="text-blue-700 font-medium text-sm mb-1 flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 mr-1 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            {project.location}
+          </div>
+          <div class="text-green-700 font-medium text-sm mb-4 flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 13c-4.418 0-8-3.582-8-8 0-3.314 2.686-6 6-6s6 2.686 6 6c0 4.418-3.582 8-8 8z" /></svg>
+            {project.cost}
+          </div>
+          <a
+            href={getResolvedPath(`/Project${["One","Two","Three","Four","Five"][idx]}`)}
+            class="mt-auto inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-semibold text-sm text-center transition"
+          >
+            Read More
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

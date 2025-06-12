@@ -1,0 +1,55 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getResolvedPath } from "@/utils/all.js";
+import projectTwoImg from "@/assets/project_2.jpg";
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+---
+<Layout title="Morak Bhawanimandi Transmission Line">
+  <Hero 
+    title="Morak Bhawanimandi Transmission Line"
+    subtitle="Project Detail"
+    image={projectTwoImg.src}
+    class="mb-6"
+  />
+  <Container>
+      <div class="mt-4">
+        <nav class="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
+        <ol class="list-none flex flex-wrap gap-2 items-center">
+            <li><a href={getResolvedPath("/")} class="hover:text-blue-700">Home</a></li>
+            <li>/</li>
+            <li><a href={getResolvedPath("/projects")} class="hover:text-blue-700">Projects</a></li>
+            <li>/</li>
+            <li class="text-gray-700 font-semibold">Morak Bhawanimandi Transmission Line</li>
+        </ol>
+        </nav>
+        <div>
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 order-2 md:order-1">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">Morak Bhawanimandi Transmission Line</h1>
+          <div class="text-blue-700 font-medium text-base flex items-center gap-1 mb-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 mr-1 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Morak to Bhawanimandi, Rajasthan
+          </div>
+          <div class="text-green-700 font-medium text-base flex items-center gap-1 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 13c-4.418 0-8-3.582-8-8 0-3.314 2.686-6 6-6s6 2.686 6 6c0 4.418-3.582 8-8 8z" /></svg>
+            ₹5.86 Crore
+          </div>
+          <div class="text-lg leading-relaxed text-gray-700 space-y-5">
+            <p>
+              The Construction of the 220 kV Single Circuit (S/C) Morak - Bhawanimandi transmission line, stretching across a distance of 41.0 kilometers, marked a significant milestone in the enhancement of the regional power infrastructure. This project, with an estimated budget of INR 5.86 Crore, aimed to bolster electricity transmission capacity and reliability within the area.
+            </p>
+            <p>
+              The scope of work encompassed the erection of high-voltage transmission towers, deployment of conductors, insulators, and associated electrical components. A team of skilled engineers and laborers executed the project with a strong commitment to safety and quality. One of the primary objectives of this venture was to reduce transmission losses, minimize voltage fluctuations, and enhance the overall efficiency of electricity distribution. Furthermore, it aimed to fortify the power grid's resilience to adverse weather conditions and load fluctuations, thereby mitigating the risk of power outages.
+            </p>
+            <p>
+              The successful completion of the 220 kV S/C Morak - Bhawanimandi transmission line played a pivotal role in improving the region's power infrastructure. It contributed to a more reliable electricity supply, supported economic growth, and addressed the rising energy demands of the area. This strategic investment in the power sector served as a catalyst for development and prosperity.
+            </p>
+          </div>
+        </div>
+        <div class="flex-1 order-1 md:order-2 flex justify-center">
+          <img src={projectTwoImg.src} alt="Morak Bhawanimandi Transmission Line" class="rounded-lg shadow w-full max-w-md object-cover" />
+        </div>
+      </div>
+  </Container>
+</Layout>
