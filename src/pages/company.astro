@@ -1,11 +1,99 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
+import CardLayout from "@/components/CardLayout.astro";
+import chairmanImg from "@/assets/chairman.jpeg";
 ---
 
-<Layout title="Company">
+<Layout title="Our Team">
   <Container>
-    <h1>Company</h1>
-    <p>Welcome to the Company page.</p>
+    <h1 class="text-4xl font-bold mb-8 text-center">Our Team</h1>
+    <CardLayout
+      title="Our Leaders"
+      cards={[
+        {
+          title: "Mr. Lokendra Jain",
+          description: `Aged 49 years, is the Chairman, Managing Director and Promoter of our Company. He holds Diploma in Engineering – Electrical from Rajasthan State. He has more than 27 years of specialized experience in Engineering, Procurement and Construction (EPC) Contracts, Extra High-Voltage (EHV) Lines in the area of power transmission and energy sector.`,
+          image: chairmanImg.src,
+          subtitle: "Managing Director"
+        },
+        {
+          title: "Ms. Shalini Jain",
+          description: `Aged 45 years, is the Whole-time Director, Chief Financial Officer and Promoter. She holds Bachelor’s Degree in Business Administration and M.A in Hindi Literature from Devi Ahilya Vishwavidyalaya, Indore. She has more than 7 years of experience in management. At present, she plays a vital part in business development, business excellence and Procurement Management of our Company.`,
+          subtitle: "Whole Time Director & CFO"
+        },
+        {
+          title: "Mr. Divyanshu Jain",
+          description: `Aged 30 years, is a Non-Executive Director of our Company and holds Bachelor’s Degree in Commerce from Jai Narain Vyas University, Jodhpur, Rajasthan. He is a qualified Chartered Accountant and a Fellow Member of Institute of Chartered Accountants of India and also a qualified Company Secretary from Institute of Company Secretaries of India. Currently he is practicing as Chartered Accountant for the past 7 years in the aspects of finance, accounting, audits and taxation.`,
+          subtitle: "Non-Executive Director"
+        },
+        {
+          title: "Mr. Ashok Kumar Jain",
+          description: `Aged 48 years, is an Independent Director of our Company. He holds Bachelor Degree in Commerce from Maharishi Dayanand Saraswati University, Ajmer and is engaged in the business of Textile and Garments since 1996 having more than 27 years of experience in the field of textiles and garments.`,
+          subtitle: "Independent Director"
+        },
+        {
+          title: "Mr. Gaurav Anand",
+          description: `Aged 28 years, is an Independent Director of our Company. He holds Masters Degree in Business Administration with Specialisation in Finance from Jaipur National University. He also holds Bachelor’s degree in Law from University of Kota. He has more than 2 years of specialized experience in the area of finance, management and law.`,
+          subtitle: "Independent Director"
+        }
+      ]}
+    />
+
+    <CardLayout
+      title="Our Management Team"
+      cards={[
+        {
+          title: "Mr. Ashok Kumar Agrawal",
+          description: "Retired Assistant Engineer from RRVPNL having experience of 38 years in EHV Lines",
+          subtitle: "Project Head"
+        },
+        {
+          title: "Mr. Balwant Singh",
+          description: "Having experience of 15 years in EHV Lines",
+          subtitle: "Project Manager"
+        },
+        {
+          title: "Mr. Pardeep Gupta",
+          description: "Having Experience of 20 years in Maintenance EHV Lines & Grid substation",
+          subtitle: "Manager Administration & Legal Affairs"
+        },
+        {
+          title: "Mr. Akhilesh Jain",
+          description: "Having Experience of 25 years in communication, Solar & EHV Lines",
+          subtitle: "Manager Purchase"
+        },
+        {
+          title: "Mr. Anil Kumar Yadav",
+          description: "Having experience of 13 Years in testing, commissioning & solar projects",
+          subtitle: "Manager Operation & Maintenance"
+        }
+      ]}
+    />
+
+    <section class="mt-16 flex flex-col md:flex-row gap-10 items-center">
+      <div class="flex-1">
+        <h2 class="text-2xl font-bold mb-4">Message from Our Leader</h2>
+        <p class="text-lg text-gray-700 mb-4">
+          As a managing Director of Kay Cee Energy & Infra Private Limited, I find immense pride in the transformative work we undertake and the profound impact we have on the energy sector. Our dedicated team of professionals stands at the forefront of innovation and commitment to delivering Extra High Voltage (EHV) solutions that are both responsive to the world’s increasing energy demands and environmentally responsible in reducing our carbon footprint.
+        </p>
+        <p class="text-lg text-gray-700 mb-4">
+          At Kay Cee Energy, we have embraced a customer-centric ethos that drives us to continuously explore and adopt cutting-edge technologies. Our goal is to ensure that our clients receive nothing short of the best-in-class services for their power transmission requirements.
+        </p>
+        <p class="text-lg text-gray-700 mb-4">
+          Our guiding principles of integrity, transparency, and excellence serve as the bedrock of our operations. We approach every project with a steadfast commitment to these values, ensuring that our clients can trust us implicitly with their critical infrastructure needs.
+        </p>
+        <p class="text-lg text-gray-700 mb-4">
+          As we look to the future, we are excited about the pivotal role we will continue to play in electrifying the world. Our vision is to be a catalyst for progress, pushing the boundaries of what’s possible in the energy industry, and contributing to a brighter, more sustainable, and electrified future for all. Together with our team and clients, we are powering a world of possibilities.
+        </p>
+        <div class="mt-6">
+          <span class="block font-semibold text-blue-700">Lokendra Jain</span>
+          <span class="block text-gray-600">Chairman and Managing Director</span>
+        </div>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <img src={chairmanImg.src} alt="Lokendra Jain" class="rounded-lg shadow-lg max-w-xs w-full object-cover" />
+      </div>
+    </section>
   </Container>
 </Layout>
