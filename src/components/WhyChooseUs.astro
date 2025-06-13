@@ -34,7 +34,7 @@ const uniqueId = `carousel-${Math.random().toString(36).substring(2, 9)}`;
 <section class="py-16 md:py-24 bg-slate-50 overflow-hidden">
   <!-- Titles: Centered, within standard page width -->
   <div class="container mx-auto px-4 text-center mb-12 md:mb-16">
-    <p class="text-lg text-primary font-semibold mb-2 tracking-wide">Since 1996</p>
+    <p class="text-lg font-semibold mb-2 tracking-wide text-blue-600">Since 1996</p>
     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Why Choose Us</h2>
   </div>
 
@@ -44,13 +44,25 @@ const uniqueId = `carousel-${Math.random().toString(36).substring(2, 9)}`;
     <div id={`carousel-viewport-${uniqueId}`} class="overflow-hidden">
       <!-- Content: Flex container that moves, negative margin to align first card -->
       <div id={`carousel-content-${uniqueId}`} class="flex transition-transform duration-300 ease-in-out -ml-3">
-        {cardData.map((card) => (
+        {cardData.map((card, idx) => (
           // Card Item: flex-none for fixed width, mx-3 for spacing
           <div class="flex-none w-72 sm:w-80 mx-3">
             <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col transform hover:-translate-y-1">
               <div class="flex items-center mb-4">
-                {/* Use Astro Icon component for Bootstrap Icons */}
-                {card.icon && <Icon name={card.icon} class="w-7 h-7 mr-3 text-primary" />}
+                {/* Use Astro Icon component for Bootstrap Icons with accent colors */}
+                {card.icon && (
+                  <Icon 
+                    name={card.icon} 
+                    class={
+                      idx === 0 ? "w-7 h-7 mr-3 text-blue-600" :
+                      idx === 1 ? "w-7 h-7 mr-3 text-green-600" :
+                      idx === 2 ? "w-7 h-7 mr-3 text-yellow-500" :
+                      idx === 3 ? "w-7 h-7 mr-3 text-emerald-600" :
+                      idx === 4 ? "w-7 h-7 mr-3 text-indigo-600" :
+                      "w-7 h-7 mr-3 text-pink-600"
+                    }
+                  />
+                )}
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-800">{card.title}</h3>
               </div>
               <p class="text-gray-600 text-base leading-relaxed flex-grow">{card.description}</p>

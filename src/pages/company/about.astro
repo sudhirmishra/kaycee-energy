@@ -7,6 +7,7 @@ import Tick from "@/components/ui/icons/tick.astro"; // Import Tick icon
 import WhyChooseUs from "@/components/WhyChooseUs.astro"; // Import WhyChooseUs component
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import { BASE_URL } from "@/utils/all.js"; // Import BASE_URL
+import { Icon } from 'astro-icon/components';
 
 // Import images for the collage
 import hero21Img from "@/assets/about/hero-2-1.jpg";
@@ -83,7 +84,8 @@ const offerCards = [
         <p class="text-blue-600 font-semibold text-lg">Sustainable, Reliable & Affordable Energy!</p>
 
         <!-- 2nd Row: Title -->
-        <h1 class="text-4xl font-bold text-gray-800">Kay Cee Energy & Infra, Powering. Your Future Since Inception.</h1>
+        <h1 class="text-4xl font-bold text-gray-800">Kay Cee Energy & Infra Limited</h1>
+        <p class="text-blue-600 text-lg font-semibold mt-2">Powering Your Future Since Inception.</p>
 
         <!-- 3rd Row: Sliders & Experience -->
         <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-8 space-y-4 sm:space-y-0">
@@ -112,21 +114,18 @@ const offerCards = [
         </div>
 
         <!-- 4th Row: Paragraph -->
-        <p class="text-slate-500 leading-relaxed">
-          KAY CEE ENERGY & INFRA PRIVATE LIMITED stands as a distinguished name in the realm of Engineering, Procurement, and Construction (EPC) services, with a specialized focus on Extra High Voltage (EHV) power transmission lines. Our unwavering dedication to delivering cutting-edge solutions has propelled us to the forefront of the industry.Since its inception in 1996 as a proprietorship firm by the visionary Lokendra Jain, the company has embarked on a journey of growth, innovation, and transformation. In 2015, it elevated its status to a private limited company, marking a significant milestone in its evolution. Today, the company is recognized as a beacon of expertise and reliability in the complex field of power infrastructure.
-        </p>
+        <div class="text-slate-500 leading-relaxed space-y-4">
+          <p>
+            KAY CEE ENERGY & INFRA LIMITED stands as a distinguished name in the realm of Engineering, Procurement, and Construction (EPC) services, with a specialized focus on Extra High Voltage (EHV) power transmission lines. Our unwavering dedication to delivering cutting-edge solutions has propelled us to the forefront of the industry.
+          </p>
+          <p>
+            Since its inception in 1996 as a proprietorship firm by the visionary Lokendra Jain, the company has embarked on a journey of growth, innovation, and transformation. In 2015, it elevated its status to a limited company, marking a significant milestone in its evolution.
+          </p>
+          <p>
+            Today, the company is recognized as a beacon of expertise and reliability in the complex field of power infrastructure.
+          </p>
+        </div>
 
-        <!-- 5th Row: Bullet Ticks -->
-        <ul class="space-y-3">
-          <li class="flex items-center">
-            <Tick class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" />
-            <span class="text-slate-500">Reliability, performance, just manufacturing</span>
-          </li>
-          <li class="flex items-center">
-            <Tick class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" />
-            <span class="text-slate-500">Innovation, Quality And Continuous Improvement</span>
-          </li>
-        </ul>
       </div>
     </div>
 
@@ -135,7 +134,7 @@ const offerCards = [
       <!-- Vision Card -->
       <div class="relative bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 p-8 rounded-2xl shadow-xl flex flex-col items-start hover:scale-[1.025] transition-transform duration-300 min-w-[320px] md:min-w-[400px] w-full">
         <div class="flex items-center mb-4">
-          <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" /></svg>
+          <Icon name="bi:compass" class="w-8 h-8 text-blue-500 mr-3" />
           <h3 class="text-2xl font-bold text-blue-700">Vision</h3>
         </div>
         <div class="h-1 w-16 bg-blue-400 rounded mb-4"></div>
@@ -146,15 +145,60 @@ const offerCards = [
       <!-- Mission Card -->
       <div class="relative bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 p-8 rounded-2xl shadow-xl flex flex-col items-start hover:scale-[1.025] transition-transform duration-300 min-w-[320px] md:min-w-[400px] w-full">
         <div class="flex items-center mb-4">
-          <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <Icon name="bi:rocket-takeoff" class="w-8 h-8 text-green-500 mr-3" />
           <h3 class="text-2xl font-bold text-green-700">Mission</h3>
         </div>
         <div class="h-1 w-16 bg-green-400 rounded mb-4"></div>
         <p class="text-base text-green-900 leading-relaxed">
-          The mission of KAY CEE ENERGY & INFRA PRIVATE LIMITED is to provide reliable, sustainable, and innovative energy and infrastructure solutions that drive economic growth, improve quality of life, and contribute to a greener future. Our core values guide our mission, which are excellence, integrity, and social responsibility. We are committed to delivering excellence in all our endeavors, ensuring that our solutions are of the highest quality, efficient, and meet the specific needs of our clients. We believe in operating with utmost integrity, adhering to ethical practices and maintaining transparency in all our dealings. As a socially responsible company, we strive to contribute to the communities we operate in, considering the social and environmental impact of our projects. Our mission is to lead the way in delivering sustainable energy and infrastructure solutions, driving economic development, and creating a better future for all.
+          The mission of KAY CEE ENERGY & INFRA LIMITED is to provide reliable, sustainable, and innovative energy and infrastructure solutions that drive economic growth, improve quality of life, and contribute to a greener future. Our core values guide our mission, which are excellence, integrity, and social responsibility. We are committed to delivering excellence in all our endeavors, ensuring that our solutions are of the highest quality, efficient, and meet the specific needs of our clients. We believe in operating with utmost integrity, adhering to ethical practices and maintaining transparency in all our dealings. As a socially responsible company, we strive to contribute to the communities we operate in, considering the social and environmental impact of our projects. Our mission is to lead the way in delivering sustainable energy and infrastructure solutions, driving economic development, and creating a better future for all.
         </p>
       </div>
     </div>
+
+    <!-- Timeline Section: Company Milestones -->
+    <section class="my-16 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10 text-blue-700">Our Journey</h2>
+      <ol class="relative border-l-4 border-blue-200 ml-4">
+        <!-- 1996: Inception -->
+        <li class="mb-10 ml-6">
+          <span class="absolute flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full -left-5 ring-4 ring-white">
+            <Icon name="bi:flag" class="w-5 h-5 text-white" />
+          </span>
+          <h3 class="font-semibold text-lg text-blue-700">1996: Company Inception</h3>
+          <p class="text-slate-600">Founded as a proprietorship by Lokendra Jain, marking the beginning of our journey in the EPC and EHV power sector.</p>
+        </li>
+        <!-- 2015: Pvt Ltd -->
+        <li class="mb-10 ml-6">
+          <span class="absolute flex items-center justify-center w-8 h-8 bg-green-600 rounded-full -left-5 ring-4 ring-white">
+            <Icon name="bi:award" class="w-5 h-5 text-white" />
+          </span>
+          <h3 class="font-semibold text-lg text-green-700">2015: Became Private Limited</h3>
+          <p class="text-slate-600">Elevated to a private limited company, expanding our capabilities and reach in the power infrastructure industry.</p>
+        </li>
+        <!-- 2024: Listing Date -->
+        <li class="mb-10 ml-6">
+          <span class="absolute flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full -left-5 ring-4 ring-white">
+            <Icon name="bi:graph-up-arrow" class="w-5 h-5 text-white" />
+          </span>
+          <h3 class="font-semibold text-lg text-indigo-700">2024: Listed on National Stock Exchange (NSE)</h3>
+          <p class="text-slate-600">Kay Cee Energy & Infra Limited was listed with the symbol <a href="https://www.nseindia.com/get-quotes/equity?symbol=KCEIL" target="_blank" rel="noopener" class="font-bold text-indigo-800 underline hover:text-indigo-600">KCEIL</a>, marking a new era of growth and public trust.</p>
+        </li>
+        <!-- 5 Key Projects -->
+        <li class="mb-10 ml-6">
+          <span class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-5 ring-4 ring-white">
+            <Icon name="bi:lightning-charge-fill" class="w-5 h-5 text-white" />
+          </span>
+          <h3 class="font-semibold text-lg text-yellow-700">2016-2024: Major Projects Completed</h3>
+          <ul class="list-disc ml-6 mt-2 text-slate-600 space-y-1">
+            <li>Deposit Work for Wonder Cement</li>
+            <li>Morak Bhawanimandi Transmission Line</li>
+            <li>Gangdhar Line</li>
+            <li>Kalisindh Bhawanimandi Transmission Line</li>
+            <li>Gas Insulated Substation (GSS) in Bhawani Mandi</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
 
     <WhyChooseUs /> {/* Added WhyChooseUs component here */}
 
