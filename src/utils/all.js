@@ -8,7 +8,7 @@ export const getFormattedDate = (date) =>
       })
     : "";
 
-const BASE_URL = import.meta.env.BASE_URL;
+export const BASE_URL = import.meta.env.BASE_URL;
 export function getResolvedPath(originalPath) {
   if (originalPath === "/") return BASE_URL;
   return BASE_URL + originalPath.substring(1);

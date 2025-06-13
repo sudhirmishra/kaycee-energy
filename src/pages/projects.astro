@@ -3,22 +3,19 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Hero from "@/components/hero.astro";
 import ProjectCards from "@/components/ProjectCards.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BASE_URL } from "@/utils/all.js";
 
 ---
 
 <Layout title="Projects">
   <Hero title="Projects" />
   <Container>
-    <!-- Breadcrumb Section -->
-    <div class="mt-4">
-      <nav aria-label="breadcrumb">
-        <ol class="flex space-x-2 text-gray-600">
-          <li><a href="/" class="hover:underline">Home</a></li>
-          <li>/</li>
-          <li>Projects</li>
-        </ol>
-      </nav>
-    </div>
+    <Breadcrumbs items={[
+      { label: "Home", href: BASE_URL },
+      { label: "Projects" }
+    ]} />
+
     <ProjectCards />
   </Container>
 </Layout>

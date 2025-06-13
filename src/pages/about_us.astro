@@ -1,0 +1,79 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import Hero from "@/components/hero.astro";
+import { BASE_URL } from "@/utils/all.js";
+---
+<Layout title="About Us">
+  <Hero title="About Us" subtitle="Empowering India with Reliable, Innovative, and Sustainable Power Solutions" />
+  <Container>
+    <Breadcrumbs items={[
+      { label: "Home", href: BASE_URL },
+      { label: "Company" },
+      { label: "About Us" }
+    ]} />
+
+    <section class="my-12 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+      <div class="md:col-span-2">
+        <h2 class="text-4xl font-bold mb-6 text-left">About</h2>
+        <p class="text-lg text-slate-700 mb-4 text-left">
+          KAY CEE ENERGY & INFRA PRIVATE LIMITED stands as a distinguished name in Engineering, Procurement, and Construction (EPC) services, specializing in Extra High Voltage (EHV) power transmission lines. With over 28 years of experience and engineering prowess, our unwavering dedication to delivering cutting-edge, dependable, and sustainable solutions has propelled us to the forefront of the industry.
+        </p>
+        <p class="text-lg text-slate-700 mb-4 text-left">
+          Founded in 1996 as a proprietorship firm by the visionary Lokendra Jain, our journey has been marked by continuous growth, innovation, and transformation. In 2015, we proudly elevated our status to a private limited company, a significant milestone in our evolution. Today, KAY CEE ENERGY is recognized as a beacon of expertise and reliability in the complex and critical field of power infrastructure, consistently setting industry standards through integrity, professionalism, and a steadfast dedication to ethical project execution and safety. We are committed to empowering local communities and energizing previously untapped regions across India.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <img src={"/src/assets/about/hero-2-1.jpg"} alt="About Kay Cee Energy" class="rounded-xl shadow-lg w-full max-w-xs object-cover" />
+      </div>
+    </section>
+
+    <section class="my-12 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+
+      <div class="flex justify-center">
+        <img src={"/src/assets/about/hero-2-2.jpg"} alt="Vision Kay Cee Energy" class="rounded-xl shadow-lg w-full max-w-xs object-cover" />
+      </div>
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold text-blue-700 mb-4 flex text-left"><svg class="w-7 h-7 mr-2 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" /></svg>Our Vision</h2>
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-xl shadow mb-6 text-left">
+          <p class="text-lg text-blue-900 text-left">
+            To be the foremost catalyst for a sustainably energized world, empowering every community and transforming previously untapped regions with pioneering power solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-12 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold text-green-700 mb-4 flex text-left"><svg class="w-7 h-7 mr-2 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Our Mission</h2>
+        <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-xl shadow mb-6 text-left">
+          <p class="text-lg text-green-900 text-left">
+            The mission of KAY CEE ENERGY & INFRA PRIVATE LIMITED is to provide reliable, sustainable, and innovative energy and infrastructure solutions that drive economic growth, improve quality of life, and contribute to a greener future. Our core values guide our mission: excellence, integrity, and social responsibility. We are committed to delivering excellence in all our endeavors, ensuring our solutions are of the highest quality, efficient, and meet the specific needs of our clients. We believe in operating with utmost integrity, adhering to ethical practices and maintaining transparency in all our dealings. As a socially responsible company, we strive to contribute to the communities we operate in, considering the social and environmental impact of our projects. Our mission is to lead the way in delivering sustainable energy and infrastructure solutions, driving economic development, and creating a better future for all.
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <img src={"/src/assets/about/hero-2-3.jpg"} alt="Mission Kay Cee Energy" class="rounded-xl shadow-lg w-full max-w-xs object-cover" />
+      </div>
+    </section>
+
+    <section class="my-12 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+
+      <div class="flex justify-center">
+        <img src={"/src/assets/about/hero-2-4.png"} alt="Strengths Kay Cee Energy" class="rounded-xl shadow-lg w-full max-w-xs object-cover" />
+      </div>
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold mb-6 text-left">Our Strengths</h2>
+        <ul class="space-y-4 text-lg text-slate-700 ml-4">
+          <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span class="text-left"><span class="font-semibold text-blue-700">28+ Years of Expertise:</span> Harnessing extensive experience and engineering prowess in EHV power transmission.</span></li>
+          <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span class="text-left"><span class="font-semibold text-blue-700">Specialized EPC Services:</span> A distinguished leader in Engineering, Procurement, and Construction for critical power infrastructure.</span></li>
+          <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span class="text-left"><span class="font-semibold text-blue-700">Commitment to Safety & Ethics:</span> Steadfast dedication to ethical project execution with a zero-tolerance approach to compromising safety.</span></li>
+          <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span class="text-left"><span class="font-semibold text-blue-700">Pioneering Solutions:</span> Driven by innovation to deliver cutting-edge, dependable, and sustainable energy solutions.</span></li>
+          <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span class="text-left"><span class="font-semibold text-blue-700">Community Empowerment:</span> Focused on empowering local communities and energizing previously untapped regions.</span></li>
+          <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><span class="text-left"><span class="font-semibold text-blue-700">Trusted Partnerships:</span> Prioritizing strong relationships with customers and suppliers, built on superior quality and punctuality.</span></li>
+        </ul>
+      </div>
+    </section>
+  </Container>
+</Layout>

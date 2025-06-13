@@ -6,8 +6,8 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sudhirmishra.github.io",
-  base: "kaycee-energy/",
+  site: "https://kaycee-energy.netlify.app",
+  base: "/",
   integrations: [mdx(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],

@@ -4,6 +4,8 @@ import Container from "@/components/container.astro";
 import TeamGridCard from "@/components/TeamGridCard.astro";
 import TeamGridCardNoPhoto from "@/components/TeamGridCardNoPhoto.astro";
 import Hero from "@/components/hero.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { getResolvedPath, BASE_URL } from "@/utils/all.js";
 import img1 from "@/assets/team/1.jpg";
 import img2 from "@/assets/team/2.jpg";
 import img3 from "@/assets/team/3.jpg";
@@ -20,6 +22,11 @@ import img6 from "@/assets/team/6.jpg";
     class="mb-10"
   />
   <Container>
+    <Breadcrumbs items={[
+      { label: "Home", href: BASE_URL },
+      { label: "Company" },
+      { label: "Our Team" }
+    ]} />
     <TeamGridCard
       title="Our Leaders"
       people={[

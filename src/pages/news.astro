@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Hero from "@/components/hero.astro";
 import { getCollection } from 'astro:content';
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BASE_URL } from "@/utils/all.js";
 
 // Fetch all blog posts
 const allPosts = await getCollection('blog', ({ data }) => {
@@ -21,15 +23,10 @@ const loremIpsumShort = "Lorem ipsum dolor sit amet, consectetur adipiscing elit
   <Hero title="News & Updates" />
   <Container>
     <!-- Breadcrumb Section -->
-    <div class="my-6"> {/* Increased margin for breadcrumbs */}
-      <nav aria-label="breadcrumb">
-        <ol class="flex space-x-2 text-gray-600">
-          <li><a href="/" class="hover:underline">Home</a></li>
-          <li>/</li>
-          <li>News</li>
-        </ol>
-      </nav>
-    </div>
+    <Breadcrumbs items={[
+      { label: "Home", href: BASE_URL },
+      { label: "News" }
+    ]} />
 
     <div class="grid md:grid-cols-3 gap-10">
       <!-- Left Column (Wider) -->

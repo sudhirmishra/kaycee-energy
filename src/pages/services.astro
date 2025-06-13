@@ -4,6 +4,8 @@ import Container from "@/components/container.astro";
 import Hero from "@/components/hero.astro";
 import CardLayout from "@/components/CardLayout.astro";
 import Testimonials from "@/components/Testimonials.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { BASE_URL } from "@/utils/all.js";
 
 import transmissionLinesTowersImg from "@/assets/services/transmission_lines_towers.jpg";
 import undergroundCableEhvImg from "@/assets/services/underground_cable_ehv.jpg";
@@ -63,16 +65,10 @@ const pageTestimonials = [
 <Layout title="Services">
   <Hero title="Services" />
   <Container>
-    <!-- Breadcrumb Section -->
-    <div class="mt-4">
-      <nav aria-label="breadcrumb">
-        <ol class="flex space-x-2 text-gray-600">
-          <li><a href="/" class="hover:underline">Home</a></li>
-          <li>/</li>
-          <li>Services</li>
-        </ol>
-      </nav>
-    </div>
+    <Breadcrumbs items={[
+      { label: "Home", href: BASE_URL },
+      { label: "Services" }
+    ]} />
 
     <!-- Card Layout Section -->
     <CardLayout
