@@ -1,11 +1,37 @@
 ---
+import homeSlideOne from "@/assets/home_slide_one.jpg";
+import homeSlideTwo from "@/assets/home_slide_two.jpg";
+import homeSlideThree from "@/assets/home_slide_three.jpg";
 import bgImage from "@/assets/bg-1.jpg";
-const { title } = Astro.props;
----
 
+const { title, imageKey } = Astro.props;
+
+const heroImageMap = {
+  about: homeSlideTwo.src,
+  services: homeSlideThree.src,
+  projects: homeSlideOne.src,
+  news: homeSlideTwo.src,
+  contact: homeSlideThree.src,
+  investor: homeSlideThree.src,
+  about: homeSlideOne.src,
+  team: homeSlideOne.src,
+  
+  
+  projecttwo: homeSlideOne.src,
+  projectthree: homeSlideTwo.src,
+  projectone: homeSlideThree.src,
+  projectfour: homeSlideTwo.src,
+  projectfive: homeSlideOne.src,
+  
+  default: bgImage.src,
+};
+
+const pageKey = imageKey || "default";
+const selectedImage = heroImageMap[pageKey] || heroImageMap.default;
+---
 <div
   class="relative w-full h-[400px] bg-cover bg-center"
-  style={`background-image: url('${bgImage.src}')`}>
+  style={`background-image: url('${selectedImage}')`}>
   <div class="absolute inset-0 before:absolute before:inset-0 before:bg-black before:opacity-40 after:absolute after:inset-0 after:bg-black after:opacity-40 w-full h-full"></div>
   <div class="absolute inset-0 flex items-center justify-center">
     <h1 class="text-5xl font-bold text-white">{title}</h1>

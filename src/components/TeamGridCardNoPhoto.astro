@@ -9,7 +9,13 @@ const { people = [], title = "" } = Astro.props;
     {people.map((person) => (
       <div class="flex flex-col items-center justify-center bg-white rounded-lg shadow p-8 min-h-[260px]">
         <div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-          <span class="text-3xl font-bold text-blue-700">{person.name.split(' ').map(n => n[0]).join('').slice(0,2)}</span>
+          <span class="text-3xl font-bold text-blue-700">{
+            (() => {
+              // Remove common salutations and get initials
+              const name = person.name.replace(/^(Mr\.?|Ms\.?|Mrs\.?|Dr\.?|Er\.?|Miss|Shri|Smt)\s+/i, "").trim();
+              return name.split(' ').map(n => n[0]).join('').slice(0,2);
+            })()
+          }</span>
         </div>
         <h3 class="text-lg font-semibold mb-1 text-center">{person.name}</h3>
         {person.subtitle && <div class="text-blue-700 text-sm mb-2 text-center">{person.subtitle}</div>}
